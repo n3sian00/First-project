@@ -1,4 +1,3 @@
-// src/components/OrderInfo.js
 import React from 'react';
 
 const OrderInfo = ({ product, quantity }) => {

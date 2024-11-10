@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-      <Header image="https://example.com/header.png" title="Product Page" />
+      <Header image="https://example.com/header.png" title="Welcome to product page!" />
       <ProductForm products={products} onOrderChange={handleOrderChange} />
       <OrderInfo product={order.product} quantity={order.quantity} />
     </div>
