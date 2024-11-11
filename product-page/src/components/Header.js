@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Header = ({ image, title }) => {
-  return (
-    <header>
-      <img src={image} alt="Header" />
-      <h1>{title}</h1>
-    </header>
-  );
+const Header = ({ title }) => {
+    return (
+        <header style={{ textAlign: 'center', padding: '10px', backgroundColor: '#f5f5f5' }}>
+            <h1>{title}</h1>
+        </header>
+    );
 };
 
 export default Header;

@@ -1,29 +1,29 @@
-// src/App.js
 import React, { useState } from 'react';
 import Header from './components/Header';
 import ProductForm from './components/ProductForm';
 import OrderInfo from './components/OrderInfo';
 
-const App = () => {
-  const products = [
-    { name: 'Product 1', price: 10 },
-    { name: 'Product 2', price: 20 },
-    { name: 'Product 3', price: 30 },
-  ];
 
-  const [order, setOrder] = useState({ product: products[0], quantity: 1 });
+function App() {
+    const products = [
+        { name: "Product A", price: 10.0 },
+        { name: "Product B", price: 15.0 },
+        { name: "Product C", price: 20.0 },
+    ];
 
-  const handleOrderChange = (productIndex, quantity) => {
-    setOrder({ product: products[productIndex], quantity });
-  };
+    const [selectedOrder, setSelectedOrder] = useState({ product: products[0], quantity: 1 });
 
-  return (
-    <div>
-      <Header image="https://example.com/header.png" title="Welcome to product page!" />
-      <ProductForm products={products} onOrderChange={handleOrderChange} />
-      <OrderInfo product={order.product} quantity={order.quantity} />
-    </div>
-  );
-};
+    const handleOrderChange = (product, quantity) => {
+        setSelectedOrder({ product, quantity });
+    };
+
+    return (
+        <div>
+            <Header title="Welcome to Product Page!"/>
+            <ProductForm products={products} onOrderChange={handleOrderChange} />
+            <OrderInfo product={selectedOrder.product} quantity={selectedOrder.quantity} />
+        </div>
+    );
+}
 
 export default App;
